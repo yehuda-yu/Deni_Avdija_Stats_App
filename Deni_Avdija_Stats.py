@@ -115,4 +115,4 @@ df['moving_average'] = df['selected_column1'].rolling(window=rolling).mean()
 
 #chart = st.line_chart(df[selected_column1].rolling(rolling).mean())
 # Plot the line chart
-st.line_chart(x='DATE',y=df[[selected_column1, 'moving_average']])
+st.line_chart(df,x='DATE',y=[selected_column1, 'moving_average'])
