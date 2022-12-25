@@ -51,6 +51,8 @@ def read_data(path):
     df = pd.read_csv(path)
     # skip first col
     df = df[df.columns[1:]]
+    # Convert Minute column to int:
+    df['MIN'] = df['MIN'].str.split(':').str[0].str.split('.').str[0].astype(int)
     
     return df
 
