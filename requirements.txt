@@ -1,8 +1,8 @@
 streamlit
 pandas
 numpy
- plotly
+plotly
 requests
- nba_api
+nba_api
 
 
