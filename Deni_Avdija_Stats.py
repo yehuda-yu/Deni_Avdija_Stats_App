@@ -77,7 +77,6 @@ st.markdown('''
             ''')
 st.header('Seasonal Stats')
 #st.table(career_df.style.format({"E": "{:.2f}"}))
-@st.experimental.memo
 st.dataframe(career_df.style.format(subset=career_df.columns[4:], formatter="{:.2f}"))
 
 # Choosecolumn and present bar plot:
