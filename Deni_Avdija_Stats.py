@@ -17,7 +17,7 @@ from nba_api.stats.endpoints import playercareerstats
 
 
 ######################## All years career stats ########################
-@st.experimental.memo
+
 # Set the base URL for the NBA Stats API
 base_url = "https://stats.nba.com/stats/leagueLeaders?LeagueID=00&PerMode=PerGame&Scope=S&Season=2020-21&SeasonType=Regular%20Season&StatCategory=PTS"
 r = requests.get(base_url, ).json()
@@ -77,6 +77,7 @@ st.markdown('''
             ''')
 st.header('Seasonal Stats')
 #st.table(career_df.style.format({"E": "{:.2f}"}))
+@st.experimental.memo
 st.dataframe(career_df.style.format(subset=career_df.columns[4:], formatter="{:.2f}"))
 
 # Choosecolumn and present bar plot:
