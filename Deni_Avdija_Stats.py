@@ -17,7 +17,7 @@ from nba_api.stats.endpoints import playercareerstats
 
 
 ######################## All years career stats ########################
-
+@st.experimental.memo
 # Set the base URL for the NBA Stats API
 base_url = "https://stats.nba.com/stats/leagueLeaders?LeagueID=00&PerMode=PerGame&Scope=S&Season=2020-21&SeasonType=Regular%20Season&StatCategory=PTS"
 r = requests.get(base_url, ).json()
