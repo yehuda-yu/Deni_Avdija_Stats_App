@@ -44,7 +44,7 @@ df = df[['Year', 'RANK', 'PLAYER', 'TEAM', 'GP',
 career_df = df[df['PLAYER']=='Deni Avdija'].reset_index(drop=True)
 career_df = career_df.set_index('Year')
 # round the df:
-career_df = career_df.round(2)
+career_df = career_df.round(3)
 
 ######################## Every game stats ########################
 def read_data(path):
@@ -77,7 +77,7 @@ st.markdown('''
             ''')
 st.header('Seasonal Stats')
 #st.table(career_df.style.format({"E": "{:.2f}"}))
-st.dataframe(career_df.style.format(subset=career_df.columns[4:], formatter="{:.2f}"))
+st.dataframe(career_df.style.format(subset=career_df.columns[4:], formatter="{:.3f}"))
 
 # Choosecolumn and present bar plot:
 columns = career_df.columns[4:].tolist()
