@@ -83,15 +83,10 @@ st.dataframe(career_df.style.format(subset=career_df.columns[4:], formatter="{:.
 # Choosecolumn and present bar plot:
 columns = career_df.columns[4:].tolist()
 selected_column = st.selectbox("Select parameter", columns,key="1")
-fig, ax = plt.subplots()
-ax.bar(career_df.index, selected_column, color='#FF00FF')
-ax.set_xlabel(career_df.index.name, fontsize=18)
-ax.set_ylabel(selected_column, fontsize=18)
-st.pyplot(fig)
-
-
-
-
+fig = px.bar(career_df, x=career_df.index, y=selected_column,width=700)
+fig.update_traces(marker_color='#FF00FF')
+fig.update_layout(font=dict(size=18))
+st.plotly_chart(fig)
 
 #### Per Game stats####
 st.header('Per Game Stats')
