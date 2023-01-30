@@ -83,13 +83,15 @@ st.dataframe(career_df.style.format(subset=career_df.columns[4:], formatter="{:.
 # Choosecolumn and present bar plot:
 columns = career_df.columns[4:].tolist()
 selected_column = st.selectbox("Select parameter", columns,key="1")
-plt.bar(career_df.index, selected_column, color='#FF00FF')
-plt.xticks(career_df.index, rotation=90)
-plt.yticks(fontsize=18)
-plt.xlabel('Index', fontsize=18)
-plt.ylabel('Selected Column', fontsize=18)
-plt.title('Bar Plot of Selected Column', fontsize=18)
-st.pyplot()
+fig, ax = plt.subplots()
+ax.bar(career_df.index, selected_column, color='#FF00FF')
+ax.set_xlabel(career_df.index.name, fontsize=18)
+ax.set_ylabel(selected_column.name, fontsize=18)
+st.pyplot(fig)
+
+
+
+
 
 #### Per Game stats####
 st.header('Per Game Stats')
