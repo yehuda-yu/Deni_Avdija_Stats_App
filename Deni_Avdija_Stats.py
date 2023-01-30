@@ -4,57 +4,51 @@ Created on Wed Dec 21 16:51:13 2022
 
 @author: Yehuda Yungstein yehudayu@gmail.com
 """
+
 import streamlit as st
-#@st.cache
 import numpy as np
 import pandas as pd
 import plotly.express as px
 import requests
 import nba_api
-# every year avg data:
 from nba_api.stats.endpoints import playercareerstats
 
-
-
-######################## All years career stats ########################
-
-# Set the base URL for the NBA Stats API
-base_url = "https://stats.nba.com/stats/leagueLeaders?LeagueID=00&PerMode=PerGame&Scope=S&Season=2020-21&SeasonType=Regular%20Season&StatCategory=PTS"
-r = requests.get(base_url, ).json()
-table_headers = r['resultSet']['headers'] # headers for df
-df_colums = ['Year'] + table_headers
-df = pd.DataFrame(columns=df_colums)
-
-
-years = ['2020-21','2021-22','2022-23']
-for year in years:
-  api_url= "https://stats.nba.com/stats/leagueLeaders?LeagueID=00&PerMode=PerGame&Scope=S&Season="+year+"&SeasonType=Regular%20Season&StatCategory=PTS"
-  r = requests.get(api_url).json()
-  df1= pd.DataFrame(r['resultSet']['rowSet'],columns = table_headers)
-  df2 = pd.DataFrame({'Year':[year for i in range(len(df1))]})
-  df3 = pd.concat([df2,df1],axis=1)
-  df = pd.concat([df,df3],axis=0)
-
-df = df[['Year', 'RANK', 'PLAYER', 'TEAM', 'GP',
-       'MIN', 'FGM', 'FGA', 'FG_PCT', 'FG3M', 'FG3A', 'FG3_PCT', 'FTM', 'FTA',
-       'FT_PCT', 'OREB', 'DREB', 'REB', 'AST', 'STL', 'BLK', 'TOV', 'PTS',
-       'EFF']]
-
-# Deni data:
-career_df = df[df['PLAYER']=='Deni Avdija'].reset_index(drop=True)
-career_df = career_df.set_index('Year')
-# round the df:
-career_df = career_df.round(3)
-
-######################## Every game stats ########################
+@st.cache
 def read_data(path):
     df = pd.read_csv(path)
-    # skip first col
     df = df[df.columns[1:]]
-    # Convert Minute column to int:
     df['MIN'] = df['MIN'].str.split(':').str[0].str.split('.').str[0].astype(int)
-    
     return df
+
+@st.cache
+def get_career_df():
+    base_url = "https://stats.nba.com/stats/leagueLeaders?LeagueID=00&PerMode=PerGame&Scope=S&Season=2020-21&SeasonType=Regular%20Season&StatCategory=PTS"
+    r = requests.get(base_url, ).json()
+    table_headers = r['resultSet']['headers']
+    df_colums = ['Year'] + table_headers
+    df = pd.DataFrame(columns=df_colums)
+
+    years = ['2020-21','2021-22','2022-23']
+    for year in years:
+      api_url= "https://stats.nba.com/stats/leagueLeaders?LeagueID=00&PerMode=PerGame&Scope=S&Season="+year+"&SeasonType=Regular%20Season&StatCategory=PTS"
+      r = requests.get(api_url).json()
+      df1= pd.DataFrame(r['resultSet']['rowSet'],columns = table_headers)
+      df2 = pd.DataFrame({'Year':[year for i in range(len(df1))]})
+      df3 = pd.concat([df2,df1],axis=1)
+      df = pd.concat([df,df3],axis=0)
+
+    df = df[['Year', 'RANK', 'PLAYER', 'TEAM', 'GP',
+           'MIN', 'FGM', 'FGA', 'FG_PCT', 'FG3M', 'FG3A', 'FG3_PCT', 'FTM', 'FTA',
+           'FT_PCT', 'OREB', 'DREB', 'REB', 'AST', 'STL', 'BLK', 'TOV', 'PTS',
+           'EFF']]
+
+    career_df = df[df['PLAYER']=='Deni Avdija'].reset_index(drop=True)
+    career_df = career_df.set_index('Year')
+    career_df = career_df.round(3)
+    return career_df
+  
+
+######################## Every game stats ########################
 
 # Create df for every season:
 path_20 = "Deni_2020-21.csv"
