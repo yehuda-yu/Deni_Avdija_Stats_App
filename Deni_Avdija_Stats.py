@@ -71,37 +71,36 @@ df_2022 = read_data(path_22)
 
 ######################## Streamlit  ########################
 
-#### Seasonal stats####
-st.title('Deni Avdija Statistics App')
-st.markdown('''
-            ----
-            ''')
-st.header('Seasonal Stats')
-#st.table(career_df.style.format({"E": "{:.2f}"}))
+# Deni Avdija Statistics App
+st.title("Deni Avdija Statistics App")
+st.markdown("----")
+
+# Seasonal Stats
+st.header("Seasonal Stats")
 st.dataframe(career_df.style.format(subset=career_df.columns[4:], formatter="{:.3f}"))
 
-# Choosecolumn and present bar plot:
+# Choose column and present bar plot
 columns = career_df.columns[4:].tolist()
-selected_column = st.selectbox("Select parameter", columns,key="1")
-fig = px.bar(career_df, x=career_df.index, y=selected_column,width=700)
-fig.update_traces(marker_color='#FF00FF')
+selected_column = st.selectbox("Select parameter", columns, key="1")
+fig = px.bar(career_df, x=career_df.index, y=selected_column, width=700)
+fig.update_traces(marker_color="#FF00FF")
 fig.update_layout(font=dict(size=18))
 st.plotly_chart(fig)
 
-#### Per Game stats####
-st.header('Per Game Stats')
+# Per Game Stats
+st.header("Per Game Stats")
 
-season_dict = {'2020-21':df_2020,'2021-22':df_2021,'2022-23':df_2022}
-selected_season = st.selectbox("Select Season", list(season_dict.keys()),key="3")
-# Present df by the dict
+season_dict = {'2020-21': df_2020, '2021-22': df_2021, '2022-23': df_2022}
+selected_season = st.selectbox("Select Season", list(season_dict.keys()), key="3")
 df = season_dict[selected_season]
 st.dataframe(df)
 
-# user choose column to present in graph:
+# User choose column to present in graph
 columns1 = df.columns[3:]
-selected_column1 = st.selectbox("Select parameter", columns1,key="4")
-# Create a line plot
-chart = st.line_chart(data =df, x='DATE',y=selected_column1)
-# Rolling average:
-rolling = st.slider('Rolling Avg value',1, 10, 1)
+selected_column1 = st.selectbox("Select parameter", columns1, key="4")
+chart = st.line_chart(data=df, x='DATE', y=selected_column1)
+
+# Rolling average
+rolling = st.slider("Rolling avg value", 1, 10, 1)
 chart = st.line_chart(df[selected_column1].rolling(rolling).mean())
+
