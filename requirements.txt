@@ -4,5 +4,4 @@ numpy
 plotly
 requests
 nba_api
-
-
+matplotlib
