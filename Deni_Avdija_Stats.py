@@ -73,8 +73,7 @@ df_2022 = read_data(path_22)
 ######################## Streamlit  ########################
 
 #### Seasonal stats####
-new_title = '<p style="font-family:sans-serif;text-align: center; color:magenta; font-size: 50px;font-weight:bold"> Deni Avdija Statistics App</p>'
-st.markdown(new_title, unsafe_allow_html=True)
+st.title('Deni Avdija Statistics App')
 st.markdown('''
             ----
             ''')
