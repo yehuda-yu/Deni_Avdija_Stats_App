@@ -11,9 +11,8 @@ import pandas as pd
 import plotly.express as px
 import requests
 import nba_api
-# every year avg data:
 from nba_api.stats.endpoints import playercareerstats
-
+import matplotlib.pyplot as plt
 
 ######################## All years career stats ########################
 @st.cache
