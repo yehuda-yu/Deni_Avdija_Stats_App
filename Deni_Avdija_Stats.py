@@ -86,7 +86,7 @@ selected_column = st.selectbox("Select parameter", columns,key="1")
 fig, ax = plt.subplots()
 ax.bar(career_df.index, selected_column, color='#FF00FF')
 ax.set_xlabel(career_df.index.name, fontsize=18)
-ax.set_ylabel(selected_column.name, fontsize=18)
+ax.set_ylabel(selected_column, fontsize=18)
 st.pyplot(fig)
 
 
