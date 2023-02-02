@@ -62,7 +62,7 @@ def read_data(path):
 # Create df for every season:
 path_20 = "Deni_2020-21.csv"
 path_21 = "Deni_2021-22.csv"
-path_22 = "Deni_2022-23_1-32.csv"
+path_22 = "Deni_2022-23_1-50.csv"
 
 df_2020 = read_data(path_20)
 df_2021 = read_data(path_21)
@@ -97,8 +97,11 @@ st.dataframe(df)
 
 # User choose column to present in graph
 columns1 = df.columns[3:]
-selected_column1 = st.selectbox("Select parameter", columns1, key="4")
-chart = st.line_chart(data=df, x='DATE', y=selected_column1)
+selected_column1 = st.selectbox("Select Y-axis parameter", columns1, key="4")
+
+# User choose X-axis parameter
+columns2 = df.columns
+selected_column2 = st.selectbox("Select X-axis parameter", columns2, default='DATE', key="5")
 
 # Rolling average
 rolling = st.slider("Rolling avg value", 1, 10, 1)
