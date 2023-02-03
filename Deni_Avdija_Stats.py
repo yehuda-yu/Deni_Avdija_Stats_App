@@ -111,11 +111,11 @@ columns1 = df.columns
 selected_column1 = st.selectbox("Select Y-axis parameter", columns1, key="5")
 
 fig, ax = plt.subplots()
-ax.plot(df[selected_column2], df[selected_column1])
-ax.scatter(df[selected_column2], df[selected_column1])
+ax.plot(df[selected_column2], df[selected_column1],color="#00265B")
+ax.scatter(df[selected_column2], df[selected_column1],color = "#C6CFD5")
 ax.set_xlabel(selected_column2)
 ax.set_ylabel(selected_column1)
-ax.set_title('Graph of Y-axis vs X-axis')
+# ax.set_title('Graph of Y-axis vs X-axis')
 # Set x-ticks every 5 samples
 plt.xticks(np.arange(0, len(df), 5), rotation=90)
 # Add background of horizontal grid
@@ -138,10 +138,10 @@ selected_column_x = st.selectbox("Select X-axis parameter", columns)
 selected_column_y = st.selectbox("Select Y-axis parameter", columns, index=columns.get_loc('DATE'))
 
 fig, ax = plt.subplots()
-ax.plot(df_k[selected_column_x], df_k[selected_column_y])
+ax.plot(df_k[selected_column_x], df_k[selected_column_y],color = '#E41134')
 ax.set_xlabel(selected_column_x)
 ax.set_ylabel(selected_column_y)
-ax.set_title(f'Graph of {selected_column_y} vs {selected_column_x} (last {k} games)')
+ax.set_title(f'Graph of {selected_column_y} (last {k} games)')
 
 st.pyplot(fig)
 
