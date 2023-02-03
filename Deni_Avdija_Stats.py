@@ -139,6 +139,7 @@ selected_column_y = st.selectbox("Select Y-axis parameter", columns, index=colum
 
 fig, ax = plt.subplots()
 ax.plot(df_k[selected_column_x], df_k[selected_column_y],color = '#E41134')
+ax.scatter(df_k[selected_column_x], df_k[selected_column_y],color = "#C6CFD5")
 ax.set_xlabel(selected_column_x)
 ax.set_ylabel(selected_column_y)
 ax.set_title(f'Graph of {selected_column_y} (last {k} games)')
