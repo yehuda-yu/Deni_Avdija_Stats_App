@@ -102,13 +102,13 @@ df = df.iloc[::-1]
 # Present the df
 st.dataframe(df)
 
-# User choose column to present in graph
-columns1 = df.columns
-selected_column1 = st.selectbox("Select Y-axis parameter", columns1, key="4")
-
 # User choose X-axis parameter
 columns2 = df.columns
-selected_column2 = st.selectbox("Select x-axis parameter (optional)", columns2, key="5", index=columns2.get_loc('DATE'))
+selected_column2 = st.selectbox("Select x-axis parameter (optional)", columns2, key="4", index=columns2.get_loc('DATE'))
+
+# User choose column to present in graph
+columns1 = df.columns
+selected_column1 = st.selectbox("Select Y-axis parameter", columns1, key="5")
 
 chart = st.line_chart(data=df, x=selected_column2, y=selected_column1)
 
