@@ -110,7 +110,7 @@ selected_column2 = st.selectbox("Select x-axis parameter (optional)", columns2, 
 columns1 = df.columns
 selected_column1 = st.selectbox("Select Y-axis parameter", columns1, key="5")
 
-chart = st.line_chart(data=df, x=selected_column2, y=selected_column1)
+chart = st.area_chart(data=df, x=selected_column2, y=selected_column1)
 
 # Rolling average
 rolling = st.slider("Rolling avg value", 1, 10, 1)
