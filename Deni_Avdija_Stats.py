@@ -93,10 +93,11 @@ st.header("Per Game Stats")
 season_dict = {'2020-21': df_2020, '2021-22': df_2021, '2022-23': df_2022}
 selected_season = st.selectbox("Select Season", list(season_dict.keys()), key="3")
 df = season_dict[selected_season]
+df = df[df.columns[1:]]
 st.dataframe(df)
 
 # User choose column to present in graph
-columns1 = df.columns[3:]
+columns1 = df.columns[2:]
 selected_column1 = st.selectbox("Select Y-axis parameter", columns1, key="4")
 
 # User choose X-axis parameter
