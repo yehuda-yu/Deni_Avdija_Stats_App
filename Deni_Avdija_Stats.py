@@ -145,5 +145,8 @@ ax.set_ylabel(selected_column_y)
 ax.set_title(f'Graph of {selected_column_y} (last {k} games)')
 plt.xticks(rotation=90)
 
+# Add background of horizontal grid
+ax.grid(axis='y', linestyle='--', alpha=0.5)
+
 st.pyplot(fig)
 
