@@ -135,10 +135,10 @@ df_k = df.iloc[-k:, :]
 # User choose two columns to display in graph
 columns = df_k.columns
 selected_column_x = st.selectbox("Select X-axis parameter", columns)
-selected_column_y = st.selectbox("Select Y-axis parameter", columns, index=columns.get_loc('Y-axis'))
+selected_column_y = st.selectbox("Select Y-axis parameter", columns, index=columns.get_loc('DATE'))
 
 fig, ax = plt.subplots()
-ax.plot(df_k[selected_column_x], df_k[selected_column_y], kind='line')
+ax.plot(df_k[selected_column_x], df_k[selected_column_y])
 ax.set_xlabel(selected_column_x)
 ax.set_ylabel(selected_column_y)
 ax.set_title(f'Graph of {selected_column_y} vs {selected_column_x} (last {k} games)')
