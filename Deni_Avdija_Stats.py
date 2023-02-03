@@ -97,10 +97,13 @@ df = df[df.columns[1:]]
 last_col = df.columns[-1]
 # use indexing to rearrange the columns
 df = df[[last_col]+list(df.columns[:-1])]
+# use the index to reverse the rows order
+df = df.iloc[::-1]
+# Present the df
 st.dataframe(df)
 
 # User choose column to present in graph
-columns1 = df.columns[2:]
+columns1 = df.columns
 selected_column1 = st.selectbox("Select Y-axis parameter", columns1, key="4")
 
 # User choose X-axis parameter
