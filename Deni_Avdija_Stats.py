@@ -110,11 +110,6 @@ selected_column2 = st.selectbox("Select x-axis parameter (optional)", columns2, 
 columns1 = df.columns
 selected_column1 = st.selectbox("Select Y-axis parameter", columns1, key="5")
 
-# Rolling average
-window_size = st.slider("Rolling average window size", 1, 100, 10)
-rolling_average = df[selected_column1].rolling(window_size).mean()
-# chart = st.area_chart(data=df, x=selected_column2, y=selected_column1)
-
 fig, ax = plt.subplots()
 ax.plot(df[selected_column2], df[selected_column1])
 ax.scatter(df[selected_column2], df[selected_column1])
@@ -123,11 +118,6 @@ ax.set_ylabel(selected_column1)
 ax.set_title('Graph of Y-axis vs X-axis')
 # Set x-ticks every 5 samples
 plt.xticks(np.arange(0, len(df), 5), rotation=90)
-
-# Add line of rolling average
-ax.plot(df[selected_column2], rolling_average, color='green', linestyle='-', label=f'Rolling average (window={window_size})')
-ax.legend()
-
 # Add background of horizontal grid
 ax.grid(axis='y', linestyle='--', alpha=0.5)
 
@@ -135,6 +125,23 @@ ax.grid(axis='y', linestyle='--', alpha=0.5)
 st.pyplot(fig)
 
 # Rolling average
-# rolling = st.slider("Rolling avg value", 1, 10, 1)
-# chart = st.line_chart(df[selected_column1].rolling(rolling).mean())
+rolling = st.slider("Rolling avg value", 1, 10, 1)
+chart = st.line_chart(df[selected_column1].rolling(rolling).mean())
+
+# User select the last k games
+k = st.slider("Select the last k games", 1, len(df), len(df))
+df_k = df.iloc[-k:, :]
+
+# User choose two columns to display in graph
+columns = df_k.columns
+selected_column_x = st.selectbox("Select X-axis parameter", columns)
+selected_column_y = st.selectbox("Select Y-axis parameter", columns, index=columns.get_loc('Y-axis'))
+
+fig, ax = plt.subplots()
+ax.plot(df_k[selected_column_x], df_k[selected_column_y], kind='line')
+ax.set_xlabel(selected_column_x)
+ax.set_ylabel(selected_column_y)
+ax.set_title(f'Graph of {selected_column_y} vs {selected_column_x} (last {k} games)')
+
+st.pyplot(fig)
 
