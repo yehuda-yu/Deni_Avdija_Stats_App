@@ -118,6 +118,10 @@ ax.scatter(df[selected_column2], df[selected_column1])
 ax.set_xlabel(selected_column2)
 ax.set_ylabel(selected_column1)
 ax.set_title('Graph of Y-axis vs X-axis')
+# Set x-ticks rotation to 90
+plt.xticks(rotation=90)
+# Add background of horizontal grid
+ax.grid(axis='y', linestyle='--', alpha=0.5)
 
 st.pyplot(fig)
 
