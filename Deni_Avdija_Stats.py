@@ -142,7 +142,7 @@ ax.plot(df_k[selected_column_x], df_k[selected_column_y],color = '#E41134')
 ax.scatter(df_k[selected_column_x], df_k[selected_column_y],color = "#C6CFD5")
 ax.set_xlabel(selected_column_x)
 ax.set_ylabel(selected_column_y)
-ax.set_title(f'Graph of {selected_column_y} (last {k} games)')
+ax.set_title(f'{selected_column_y} (last {k} games)')
 plt.xticks(rotation=90)
 
 # Add background of horizontal grid
