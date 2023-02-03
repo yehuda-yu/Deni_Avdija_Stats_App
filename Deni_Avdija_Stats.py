@@ -5,7 +5,6 @@ Created on Wed Dec 21 16:51:13 2022
 @author: Yehuda Yungstein yehudayu@gmail.com
 """
 import streamlit as st
-#@st.cache
 import numpy as np
 import pandas as pd
 import plotly.express as px
