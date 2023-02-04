@@ -151,5 +151,5 @@ ax.grid(axis='y', linestyle='--', alpha=0.5)
 st.pyplot(fig)
 
 # Add the average:
-st.dataframe(df_k.describe().iloc[1].T)
+st.dataframe(df_k.T.describe().iloc[1])
 
