@@ -157,24 +157,21 @@ st.table(df_k.describe().iloc[1].T)
 
 
 # Credits
-st.markdown("Developed by Yehuda Yungstein")
+    st.markdown("Developed by Yehuda Yungstein")
 
 col1, col2, = st.columns(2)
 
 with col1:
-      st.markdown("[![Title](https://img.icons8.com/small/256/linkedin.png)](https://www.linkedin.com/in/yehuda-yungstein/)")
+      # URL of the image
+      image_url = "https://img.icons8.com/small/256/new-post.png"
+      # Mail URL
+      mail_url = "mailto:yehudayu@gmail.com"
+      st.write("<a href='" + linkedin_url + "'><img src='" + image_url + "' width='50' height='50'></a>", unsafe_allow_html=True)
 
 with col2:
-      st.markdown("[![Title](https://img.icons8.com/small/256/new-post.png)](mailto:yehudayu@gmail.com)")
-
-# URL of the image
-image_url = "https://img.icons8.com/small/256/linkedin.png"
-
-# LinkedIn URL
-linkedin_url = "https://www.linkedin.com/in/yehuda-yungstein/"
-
-# Display clickable image
-st.write("<a href='" + linkedin_url + "'><img src='" + image_url + "' width='50' height='50'></a>", unsafe_allow_html=True)
-
-
+      # URL of the image
+      image_url = "https://img.icons8.com/small/256/linkedin.png"
+      # LinkedIn URL
+      linkedin_url = "https://www.linkedin.com/in/yehuda-yungstein/"
+      st.write("<a href='" + linkedin_url + "'><img src='" + image_url + "' width='50' height='50'></a>", unsafe_allow_html=True)
 
