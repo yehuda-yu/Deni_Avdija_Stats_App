@@ -159,3 +159,6 @@ st.table(df_k.describe().iloc[1].T)
 # Credits
 st.markdown("Developed by [<i class='fa fa-linkedin'></i> Yehuda Yungstein](www.linkedin.com/in/yehuda-yungstein/)")
 st.markdown("Email: [<i class='fa fa-envelope'></i> your.email@example.com](mailto:yehudayu@gmail.com)")
+
+ [![Repo](https://badgen.net/badge/icon/GitHub?icon=github&label)](https://github.com/yehuda-yu/Deni_Avdija_Stats_App/edit/main/Deni_Avdija_Stats.py) 
+st.markdown("<br>",unsafe_allow_html=True)
