@@ -160,7 +160,7 @@ st.table(df_k.describe().iloc[1].T)
 st.markdown("Developed by [<i class='fa fa-linkedin'></i> Yehuda Yungstein](www.linkedin.com/in/yehuda-yungstein/)")
 st.markdown("Email: [<i class='fa fa-envelope'></i> your.email@example.com](mailto:yehudayu@gmail.com)")
 
-st.markdown("[![Title](https://static.licdn.com/sc/h/dd7cqvleum9kenb0c7jh3ov5f)](https://www.linkedin.com/in/yehuda-yungstein/)")
+st.markdown("[![Title](https://cdn-icons-png.flaticon.com/128/3536/3536505.png)](https://www.linkedin.com/in/yehuda-yungstein/)")
 st.markdown("[![Title](https://cdn-icons-png.flaticon.com/128/888/888853.png)](mailto:yehudayu@gmail.com)")
 
 
