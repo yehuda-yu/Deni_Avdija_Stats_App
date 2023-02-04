@@ -167,6 +167,14 @@ with col1:
 with col2:
       st.markdown("[![Title](https://img.icons8.com/small/256/new-post.png)](mailto:yehudayu@gmail.com)")
 
+# URL of the image
+image_url = "https://img.icons8.com/small/256/linkedin.png"
+
+# LinkedIn URL
+linkedin_url = "https://www.linkedin.com/in/yehuda-yungstein/"
+
+# Display clickable image
+st.write("<a href='" + linkedin_url + "'><img src='" + image_url + "' width='10' height='10'></a>", unsafe_allow_html=True)
 
 
 
