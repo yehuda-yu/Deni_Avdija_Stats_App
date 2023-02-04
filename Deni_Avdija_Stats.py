@@ -136,8 +136,25 @@ df_k = df.iloc[-k:, :]
 columns = df_k.columns
 selected_column_y = st.selectbox("Select Y-axis parameter", columns, index=columns.get_loc('PTS'))
 
-col1, col2 = st.columns([3, 1])
 
+col1, col2 = st.columns([3, 1])
+# Set alignment:
+# Set symbols and links 
+st.markdown(
+    """
+    <style>
+        div[data-testid="column"]:nth-of-type(1)
+        {
+            text-align: center;
+        } 
+
+        div[data-testid="column"]:nth-of-type(2)
+        {
+            text-align: center;
+        } 
+    </style>
+    """,unsafe_allow_html=True
+)
 # col1.subheader("A wide column with a chart")
 # col1.line_chart(data)
 
