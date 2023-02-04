@@ -166,7 +166,8 @@ with col1:
       image_url = "https://img.icons8.com/small/256/new-post.png"
       # Mail URL
       mail_url = "mailto:yehudayu@gmail.com"
-      st.write("<a href='" + linkedin_url + "'><img src='" + image_url + "' width='50' height='50'></a>", unsafe_allow_html=True)
+      st.write("<a href='" + mail_url + "'><img src='" + image_url + "' width='50' height='50'></a>", unsafe_allow_html=True)
+
 
 with col2:
       # URL of the image
