@@ -125,8 +125,8 @@ ax.grid(axis='y', linestyle='--', alpha=0.5)
 st.pyplot(fig)
 
 # Rolling average
-rolling = st.slider("Rolling avg value", 1, 10, 1)
-chart = st.line_chart(df[selected_column1].rolling(rolling).mean())
+#rolling = st.slider("Rolling avg value", 1, 10, 1)
+#chart = st.line_chart(df[selected_column1].rolling(rolling).mean())
 
 # User select the last k games
 k = st.slider("Select the last k games", 1, len(df), len(df))
