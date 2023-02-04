@@ -160,4 +160,4 @@ st.table(df_k.describe().iloc[1].T)
 st.markdown("Developed by [<i class='fa fa-linkedin'></i> Yehuda Yungstein](www.linkedin.com/in/yehuda-yungstein/)")
 st.markdown("Email: [<i class='fa fa-envelope'></i> your.email@example.com](mailto:yehudayu@gmail.com)")
 
-st.markdown(“[![Title](‘https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg’)](‘www.linkedin.com/in/yehuda-yungstein/’)”)
+st.markdown([![Title](https://1000logos.net/wp-content/uploads/2017/03/Color-of-the-LinkedIn-Logo.jpg)](‘www.linkedin.com/in/yehuda-yungstein/’))
