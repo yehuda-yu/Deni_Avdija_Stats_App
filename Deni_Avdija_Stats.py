@@ -152,5 +152,6 @@ st.pyplot(fig)
 
 # Add the average:
 st.subheader(f"Last {k} Games Mean:")
-st.dataframe(df_k.describe().iloc[1])
+# st.dataframe(df_k.describe().iloc[1])
+st.table(df_k.describe().iloc[1].T)
 
