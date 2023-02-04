@@ -156,10 +156,11 @@ ax.grid(axis='y', linestyle='--', alpha=0.5)
 col1.pyplot(fig)
 
 # Add the average:
-st.subheader(f"Last {k} Games Mean:")
+
 # st.dataframe(df_k.describe().iloc[1])
 # st.table(df_k.describe().iloc[1].T)
 # col2.subheader("A narrow column with the data")
+col2.subheader(f"Last {k} Games Mean:")
 col2.table(df_k.describe().iloc[1].T)
 
 
