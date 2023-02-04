@@ -146,12 +146,11 @@ ax.plot(df_k['DATE'], df_k[selected_column_y],color = '#E41134')
 ax.scatter(df_k['DATE'], df_k[selected_column_y],color = "#C6CFD5")
 ax.set_xlabel('Date')
 ax.set_ylabel(selected_column_y)
-ax.set_title(f'{selected_column_y} (last {k} games)')
 plt.xticks(rotation=90)
 
 # Add background of horizontal grid
 ax.grid(axis='y', linestyle='--', alpha=0.5)
-
+col1.subheader(f'{selected_column_y} (last {k} games)')
 col1.pyplot(fig)
 
 # Add the average:
