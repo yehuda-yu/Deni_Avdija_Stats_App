@@ -161,6 +161,7 @@ st.markdown("Developed by [<i class='fa fa-linkedin'></i> Yehuda Yungstein](www.
 st.markdown("Email: [<i class='fa fa-envelope'></i> your.email@example.com](mailto:yehudayu@gmail.com)")
 
 st.markdown("[![Title](https://static.licdn.com/sc/h/dd7cqvleum9kenb0c7jh3ov5f)](https://www.linkedin.com/in/yehuda-yungstein/)")
+st.markdown("[![Title](https://cdn-icons-png.flaticon.com/128/888/888853.png)](mailto:yehudayu@gmail.com)")
 
 
 
