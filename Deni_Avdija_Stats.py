@@ -159,7 +159,7 @@ st.table(df_k.describe().iloc[1].T)
 # Credits
 st.markdown("Developed by Yehuda Yungstein")
 
-col1, col2, = st.columns(1)
+col1, col2, = st.columns(2,gap = "small")
 
 with col1:
       # URL of the image
