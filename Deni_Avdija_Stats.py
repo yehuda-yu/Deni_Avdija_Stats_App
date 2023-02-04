@@ -162,10 +162,10 @@ st.markdown("Developed by Yehuda Yungstein")
 col1, col2, = st.columns(2)
 
 with col1:
-      st.markdown("[![Title](https://cdn-icons-png.flaticon.com/128/3536/3536505.png)](https://www.linkedin.com/in/yehuda-yungstein/)")
+      st.markdown("[![Title](https://img.icons8.com/small/256/linkedin.png)](https://www.linkedin.com/in/yehuda-yungstein/)")
 
 with col2:
-      st.markdown("[![Title](https://cdn-icons-png.flaticon.com/128/888/888853.png)](mailto:yehudayu@gmail.com)")
+      st.markdown("[![Title](https://img.icons8.com/small/256/new-post.png)](mailto:yehudayu@gmail.com)")
 
 
 
