@@ -155,3 +155,7 @@ st.subheader(f"Last {k} Games Mean:")
 # st.dataframe(df_k.describe().iloc[1])
 st.table(df_k.describe().iloc[1].T)
 
+
+st.sidebar.header("About")
+st.sidebar.info("Developed by [Your Name](linkedin.com/in/your-profile)")
+st.sidebar.info("Email: your.email@example.com")
