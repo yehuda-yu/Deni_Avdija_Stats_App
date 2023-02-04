@@ -134,8 +134,7 @@ df_k = df.iloc[-k:, :]
 
 # User choose two columns to display in graph
 columns = df_k.columns
-selected_column_x = st.selectbox("Select X-axis parameter", columns)
-selected_column_y = st.selectbox("Select Y-axis parameter", columns, index=columns.get_loc('DATE'))
+selected_column_y = st.selectbox("Select Y-axis parameter", columns, index=columns.get_loc('PTS'))
 
 col1, col2 = st.columns([3, 1])
 
@@ -143,8 +142,8 @@ col1, col2 = st.columns([3, 1])
 # col1.line_chart(data)
 
 fig, ax = plt.subplots()
-ax.plot(df_k[selected_column_x], df_k[selected_column_y],color = '#E41134')
-ax.scatter(df_k[selected_column_x], df_k[selected_column_y],color = "#C6CFD5")
+ax.plot(df_k['DATE'], df_k[selected_column_y],color = '#E41134')
+ax.scatter(df_k['DATE'], df_k[selected_column_y],color = "#C6CFD5")
 ax.set_xlabel(selected_column_x)
 ax.set_ylabel(selected_column_y)
 ax.set_title(f'{selected_column_y} (last {k} games)')
