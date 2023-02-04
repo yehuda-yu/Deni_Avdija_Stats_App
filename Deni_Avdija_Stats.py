@@ -157,7 +157,7 @@ st.table(df_k.describe().iloc[1].T)
 
 
 # Credits
-st.markdown("Developed by Yehuda Yungstein")
+st.markdown("**Developed by**: Yehuda Yungstein")
 
 # Set symbols and links 
 st.markdown(
