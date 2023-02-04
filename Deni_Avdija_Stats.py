@@ -129,7 +129,7 @@ st.pyplot(fig)
 #chart = st.line_chart(df[selected_column1].rolling(rolling).mean())
 
 # User select the last k games
-k = st.slider("Select the last k games", 1, len(df), len(df))
+k = st.slider("Select the last k games", 1, len(df), 5)
 df_k = df.iloc[-k:, :]
 
 # User choose two columns to display in graph
