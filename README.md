@@ -1,6 +1,6 @@
 # Deni Avdija Statistics App
 
-#### **link**:[https://tinyurl.com/avdijapp](https://tinyurl.com/avdijapp)
+#### **link**: https://avdija-stat-yehudayu.streamlit.app/
 
 ## Introduction
 This project is a web application built with streamlit library to visualize the career statistics of Deni Avdija. The application includes inter-annual data and all years career stats. 
