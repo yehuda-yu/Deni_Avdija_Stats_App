@@ -159,14 +159,13 @@ st.table(df_k.describe().iloc[1].T)
 # Credits
 st.markdown("Developed by Yehuda Yungstein")
 
-st.markdown("[![Title](https://cdn-icons-png.flaticon.com/128/3536/3536505.png)](https://www.linkedin.com/in/yehuda-yungstein/)")
-st.markdown("[![Title](https://cdn-icons-png.flaticon.com/128/888/888853.png)](mailto:yehudayu@gmail.com)")
+col1, col2, = st.columns(2)
 
+with col1:
+      st.markdown("[![Title](https://cdn-icons-png.flaticon.com/128/3536/3536505.png)](https://www.linkedin.com/in/yehuda-yungstein/)")
 
-st.columns([
-    st.markdown("<a href='https://www.linkedin.com/in/yehuda-yungstein/'><img src='https://cdn-icons-png.flaticon.com/128/3536/3536505.png'></a>"),
-    st.markdown("<a href='mailto:yehudayu@gmail.com'><img src='https://cdn-icons-png.flaticon.com/128/888/888853.png'></a>")
-])
+with col2:
+      st.markdown("[![Title](https://cdn-icons-png.flaticon.com/128/888/888853.png)](mailto:yehudayu@gmail.com)")
 
 
 
