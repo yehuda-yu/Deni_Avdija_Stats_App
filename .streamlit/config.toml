@@ -5,7 +5,7 @@
 primaryColor = "#0a0a0a" # black text
 
 # Background color for the main container.
-backgroundColor = "#b5b8b4" # Gray backround
+backgroundColor = "#fafafa" # white backround
 
 
 # Used as the background for most widgets. Examples of widgets with this background are st.sidebar,
