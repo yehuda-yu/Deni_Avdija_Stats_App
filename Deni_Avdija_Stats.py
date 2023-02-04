@@ -159,6 +159,23 @@ st.table(df_k.describe().iloc[1].T)
 # Credits
 st.markdown("Developed by Yehuda Yungstein")
 
+# Set symbols and links 
+st.markdown(
+    """
+    <style>
+        div[data-testid="column"]:nth-of-type(1)
+        {
+            text-align: right;
+        } 
+
+        div[data-testid="column"]:nth-of-type(2)
+        {
+            text-align: left;
+        } 
+    </style>
+    """,unsafe_allow_html=True
+)
+
 col1, col2, = st.columns(2,gap = "small")
 
 with col1:
