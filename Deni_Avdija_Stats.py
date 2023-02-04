@@ -138,23 +138,6 @@ selected_column_y = st.selectbox("Select Y-axis parameter", columns, index=colum
 
 
 col1, col2 = st.columns([3, 1])
-# Set alignment:
-# Set symbols and links 
-st.markdown(
-    """
-    <style>
-        div[data-testid="column"]:nth-of-type(1)
-        {
-            text-align: center;
-        } 
-
-        div[data-testid="column"]:nth-of-type(2)
-        {
-            text-align: center;
-        } 
-    </style>
-    """,unsafe_allow_html=True
-)
 # col1.subheader("A wide column with a chart")
 # col1.line_chart(data)
 
@@ -162,12 +145,12 @@ fig, ax = plt.subplots()
 ax.plot(df_k['DATE'], df_k[selected_column_y],color = '#E41134')
 ax.scatter(df_k['DATE'], df_k[selected_column_y],color = "#C6CFD5")
 ax.set_xlabel('Date')
+ax.set_title(f'{selected_column_y} (last {k} games)')
 ax.set_ylabel(selected_column_y)
 plt.xticks(rotation=90)
 
 # Add background of horizontal grid
 ax.grid(axis='y', linestyle='--', alpha=0.5)
-col1.subheader(f'{selected_column_y} (last {k} games)')
 col1.pyplot(fig)
 
 # Add the average:
