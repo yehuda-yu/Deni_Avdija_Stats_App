@@ -137,6 +137,11 @@ columns = df_k.columns
 selected_column_x = st.selectbox("Select X-axis parameter", columns)
 selected_column_y = st.selectbox("Select Y-axis parameter", columns, index=columns.get_loc('DATE'))
 
+col1, col2 = st.columns([3, 1])
+
+# col1.subheader("A wide column with a chart")
+# col1.line_chart(data)
+
 fig, ax = plt.subplots()
 ax.plot(df_k[selected_column_x], df_k[selected_column_y],color = '#E41134')
 ax.scatter(df_k[selected_column_x], df_k[selected_column_y],color = "#C6CFD5")
@@ -148,12 +153,14 @@ plt.xticks(rotation=90)
 # Add background of horizontal grid
 ax.grid(axis='y', linestyle='--', alpha=0.5)
 
-st.pyplot(fig)
+col1.pyplot(fig)
 
 # Add the average:
 st.subheader(f"Last {k} Games Mean:")
 # st.dataframe(df_k.describe().iloc[1])
-st.table(df_k.describe().iloc[1].T)
+# st.table(df_k.describe().iloc[1].T)
+# col2.subheader("A narrow column with the data")
+col2.table(df_k.describe().iloc[1].T)
 
 
 # Credits
