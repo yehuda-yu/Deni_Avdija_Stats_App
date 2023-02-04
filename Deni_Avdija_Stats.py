@@ -174,7 +174,7 @@ image_url = "https://img.icons8.com/small/256/linkedin.png"
 linkedin_url = "https://www.linkedin.com/in/yehuda-yungstein/"
 
 # Display clickable image
-st.write("<a href='" + linkedin_url + "'><img src='" + image_url + "' width='10' height='10'></a>", unsafe_allow_html=True)
+st.write("<a href='" + linkedin_url + "'><img src='" + image_url + "' width='50' height='50'></a>", unsafe_allow_html=True)
 
 
 
