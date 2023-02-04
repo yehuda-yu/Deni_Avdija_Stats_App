@@ -138,8 +138,6 @@ selected_column_y = st.selectbox("Select Y-axis parameter", columns, index=colum
 
 
 col1, col2 = st.columns([3, 1])
-# col1.subheader("A wide column with a chart")
-# col1.line_chart(data)
 
 fig, ax = plt.subplots()
 ax.plot(df_k['DATE'], df_k[selected_column_y],color = '#E41134')
@@ -158,7 +156,7 @@ col1.pyplot(fig)
 # st.dataframe(df_k.describe().iloc[1])
 # st.table(df_k.describe().iloc[1].T)
 # col2.subheader("A narrow column with the data")
-col2.subheader(f"Last {k} Games Mean:")
+col2.subheader("Means")
 col2.table(df_k.describe().iloc[1].T)
 
 
