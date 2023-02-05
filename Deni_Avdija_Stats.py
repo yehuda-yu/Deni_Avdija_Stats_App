@@ -108,7 +108,7 @@ selected_column2 = st.selectbox("Select x-axis parameter (optional)", columns2, 
 
 # User choose column to present in graph
 columns1 = df.columns
-selected_column1 = st.selectbox("Select Y-axis parameter", columns1, key="5"ת index=columns2.get_loc('PTS'))
+selected_column1 = st.selectbox("Select Y-axis parameter", columns1, key="5", index=columns2.get_loc('PTS'))
 
 fig, ax = plt.subplots()
 ax.plot(df[selected_column2], df[selected_column1],color="#00265B")
