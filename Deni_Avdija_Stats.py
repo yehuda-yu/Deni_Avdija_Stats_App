@@ -157,7 +157,7 @@ col1.pyplot(fig)
 # st.table(df_k.describe().iloc[1].T)
 # col2.subheader("A narrow column with the data")
 col2.subheader("Means")
-col2.table(df_k.describe().iloc[1].T)
+col2.table(df_k.describe().iloc[1])
 
 
 # Credits
