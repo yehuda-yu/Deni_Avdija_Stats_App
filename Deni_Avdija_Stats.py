@@ -92,7 +92,7 @@ st.header("Per Game Stats")
 season_dict = {'2020-21': df_2020, '2021-22': df_2021, '2022-23': df_2022}
 selected_season = st.selectbox("Select Season", list(season_dict.keys()), key="3",index=len(season_dict.keys())-1)
 df = season_dict[selected_season]
-df = df[df.columns[1:]]
+df = df[df.columns[1:]].reset_index(drop=True)
 # select the last column (Date)
 last_col = df.columns[-1]
 # use indexing to rearrange the columns
