@@ -19,10 +19,11 @@ import matplotlib.pyplot as plt
 # Set configutation
 url = "https://cdn.nba.com/headshots/nba/latest/1040x760/1630166.png"
 response = requests.get(url)
+script_directory = os.path.dirname(os.path.realpath(__file__))
 with open(os.path.join(script_directory, 'favicon.png'), 'wb') as f:
     f.write(response.content)
 icon = Image.open(os.path.join(script_directory, 'favicon.png'))
-st.set_page_config('Deni Avdija Stats', icon)
+st.set_page_config(icon=icon, page_title="Deni Stats Explorer")
 
 @st.cache
 def get_career_df():
