@@ -10,12 +10,19 @@ import pandas as pd
 import plotly.express as px
 import requests
 import nba_api
+import os
+from PIL import Image
 from nba_api.stats.endpoints import playercareerstats
 import matplotlib.pyplot as plt
 
 ######################## All years career stats ########################
 # Set configutation
-st.set_page_config('Deni Avdija Stats')
+url = "https://cdn.nba.com/headshots/nba/latest/1040x760/1630166.png"
+response = requests.get(url)
+with open(os.path.join(script_directory, 'favicon.png'), 'wb') as f:
+    f.write(response.content)
+icon = Image.open(os.path.join(script_directory, 'favicon.png'))
+st.set_page_config('Deni Avdija Stats', icon)
 
 @st.cache
 def get_career_df():
