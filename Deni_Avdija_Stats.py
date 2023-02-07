@@ -113,7 +113,7 @@ columns1 = df.columns
 selected_column1 = st.selectbox("Select Y-axis parameter", columns1, key="5", index=columns2.get_loc('PTS'))
 
 fig, ax = plt.subplots()
-ax.plot(df[selected_column2], df[selected_column1],color="#00265B")
+ax.plot(df[selected_column2], df[selected_column1],color="#E41134")
 ax.scatter(df[selected_column2], df[selected_column1],color = "#C6CFD5")
 ax.set_xlabel(selected_column2)
 ax.set_ylabel(selected_column1)
