@@ -14,6 +14,9 @@ from nba_api.stats.endpoints import playercareerstats
 import matplotlib.pyplot as plt
 
 ######################## All years career stats ########################
+# Set configutation
+st.set_page_config('Deni Avdija Stats')
+
 @st.cache
 def get_career_df():
     
@@ -71,7 +74,6 @@ df_2022 = read_data(path_22)
 ######################## Streamlit  ########################
 
 # Deni Avdija Statistics App
-st.set_page_config('Deni Avdija Stats')
 st.markdown('<img src=\"https://cdn.nba.com/headshots/nba/latest/1040x760/1630166.png" style=\"width:150px\"> ' , 
     unsafe_allow_html=True)
 st.title("Deni Avdija Statistics App")
