@@ -170,7 +170,7 @@ col1.pyplot(fig)
 # st.table(df_k.describe().iloc[1].T)
 # col2.subheader("A narrow column with the data")
 col2.subheader(f'Last {k} Games Stats')
-col2.table(df_k.describe().iloc[0:3])
+col2.table(df_k.describe().iloc[0:4])
 
 
 
