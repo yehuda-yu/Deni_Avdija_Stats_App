@@ -166,7 +166,8 @@ col1.pyplot(fig)
 
 # Add the Stats:
 col2.subheader(f'Last {k} Games Stats')
-df_table = df_k.describe().iloc[1:5]
+idx = [1, 2, 3, -1]
+df_table = df_k.describe().iloc[idx]
 # select the column you want to move
 selected_column = df_table[selected_column_y]
 
