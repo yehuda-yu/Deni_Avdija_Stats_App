@@ -183,7 +183,7 @@ df_table = pd.concat([selected_column, df_table], axis=1)
 
 # assign the column names in the desired order
 df_table = df_table[cols]
-col2.table(df_table)
+col2.dataframe(df_table)
 
 
 
