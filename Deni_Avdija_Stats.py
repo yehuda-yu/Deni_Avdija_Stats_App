@@ -170,8 +170,7 @@ col1.pyplot(fig)
 # st.table(df_k.describe().iloc[1].T)
 # col2.subheader("A narrow column with the data")
 col2.subheader(f'Last {k} Games Stats')
-col2.table(pd.concat([df_k[selected_column_y].describe().loc[["count", "mean", "std", "min", "max"]],
-                      df_k.describe().drop([selected_column_y], axis=1)], axis=1).reindex([selected_column_y]+list(df_k.columns.difference([selected_column_y]))))
+col2.table(df_k.describe().iloc[0:3])
 
 
 
