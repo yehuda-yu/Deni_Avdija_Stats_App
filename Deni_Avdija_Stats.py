@@ -169,9 +169,10 @@ col1.pyplot(fig)
 # st.dataframe(df_k.describe().iloc[1])
 # st.table(df_k.describe().iloc[1].T)
 # col2.subheader("A narrow column with the data")
-col2.subheader("Means")
+col2.subheader(f'Last {k} Games Stats')
 col2.table(pd.concat([df_k.describe().loc[["count", "mean", "std", "min", "max"], [selected_column_y]],
                       df_k.describe().drop([selected_column_y], axis=1)], axis=1))
+
 
 
 
