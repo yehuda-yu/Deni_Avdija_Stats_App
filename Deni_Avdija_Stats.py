@@ -175,7 +175,7 @@ df_table = df_table.drop(selected_column_y, axis=1)
 
 # get a list of the column names in the desired order
 cols = df_table.columns.tolist()
-cols = ['col2'] + cols
+cols = [selected_column_y] + cols
 
 # concatenate the selected column and the original data frame to create a new data frame
 df_table = pd.concat([selected_column, df_table], axis=1)
