@@ -72,7 +72,7 @@ def read_data(path):
 # Create df for every season:
 path_20 = "Deni_2020-21.csv"
 path_21 = "Deni_2021-22.csv"
-path_22 = "Deni_2022-23_1-52.csv"
+path_22 = "Deni_2022-23_1-54.csv"
 
 df_2020 = read_data(path_20)
 df_2021 = read_data(path_21)
