@@ -164,13 +164,25 @@ plt.xticks(rotation=90)
 ax.grid(axis='y', linestyle='--', alpha=0.5)
 col1.pyplot(fig)
 
-# Add the average:
-
-# st.dataframe(df_k.describe().iloc[1])
-# st.table(df_k.describe().iloc[1].T)
-# col2.subheader("A narrow column with the data")
+# Add the Stats:
 col2.subheader(f'Last {k} Games Stats')
-col2.table(df_k.describe().iloc[1:5])
+df_table = df_k.describe().iloc[1:5]
+# select the column you want to move
+selected_column = df_table[selected_column_y]
+
+# drop the selected column from the original data frame
+df_table = df_table.drop(selected_column_y, axis=1)
+
+# get a list of the column names in the desired order
+cols = df_table.columns.tolist()
+cols = ['col2'] + cols
+
+# concatenate the selected column and the original data frame to create a new data frame
+df_table = pd.concat([selected_column, df_table], axis=1)
+
+# assign the column names in the desired order
+df_table = df_table[cols]
+col2.table(df_table)
 
 
 
