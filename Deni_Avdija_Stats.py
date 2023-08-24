@@ -118,7 +118,7 @@ st.dataframe(df)
 
 # User choose column to present in graph
 columns1 = df.columns
-selected_column1 = st.selectbox("Select Y-axis parameter", columns1, key="5", index=columns2.get_loc('PTS'))
+selected_column1 = st.selectbox("Select Y-axis parameter", columns1, key="5", index=columns1.get_loc('PTS'))
 
 selected_column2 = 'DATE'
 fig, ax = plt.subplots()
