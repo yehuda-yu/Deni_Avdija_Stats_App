@@ -25,7 +25,7 @@ with open(os.path.join(script_directory, 'favicon.png'), 'wb') as f:
 icon = Image.open(os.path.join(script_directory, 'favicon.png'))
 st.set_page_config("Deni Stats Explorer",icon)
 
-@st.cache
+@st.cache_data
 def get_career_df():
     
     # Set the base URL for the NBA Stats API
@@ -59,7 +59,7 @@ def get_career_df():
 career_df = get_career_df()
 
 ######################## inter-annual data ########################
-@st.cache
+@st.cache_data
 def read_data(path):
     df = pd.read_csv(path)
     # skip first col
