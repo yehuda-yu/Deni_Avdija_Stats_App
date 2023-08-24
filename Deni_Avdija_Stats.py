@@ -130,10 +130,11 @@ fig1.update_traces(line_color='#d9295a', line_width=3)
 fig1.update_traces(marker_color='#3f2646')
 fig1.update_layout(xaxis_title='Game Number', yaxis_title=selected_column1)
 # Set the x-axis tick mode, starting position, and step size
-fig1.update_layout(xaxis=dict(tickmode='linear', tick0=0, dtick=5, nticks=10))
+fig1.update_layout(xaxis=dict(tickmode='linear', tick0=0, dtick=5, tickfont=dict(size=16)))
 # Set the y-axis tick mode and number of ticks
-fig1.update_layout(yaxis=dict(tickmode='linear', nticks=10))
+fig1.update_layout(yaxis=dict(tickmode='linear', nticks=10, tickfont=dict(size=16)))
 st.plotly_chart(fig1)
+
 '''
 fig1 = px.line(df, selected_column2, y=selected_column1, markers=True,)
 # Set the line color
