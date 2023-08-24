@@ -169,7 +169,7 @@ fig2.update_traces(marker_color='#3f2646')
 fig2.update_layout(xaxis=dict(tickfont=dict(size=16)))
 # Set the y-axis tick mode and number of ticks
 fig2.update_layout(yaxis=dict(tickfont=dict(size=16)))
-col1.plotly_chart(fig)
+col1.plotly_chart(fig2)
 
 # Add the Stats:
 col2.subheader(f'Last {k} Games Stats')
