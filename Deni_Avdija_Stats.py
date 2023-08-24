@@ -122,22 +122,11 @@ selected_column1 = st.selectbox("Select Y-axis parameter", columns1, key="5", in
 
 df['Game Number'] = df.index+1
 selected_column2 = 'Game Number'
-fig, ax = plt.subplots()
-ax.plot(df[selected_column2], df[selected_column1],color="#E41134")
-ax.scatter(df[selected_column2], df[selected_column1],color = "#C6CFD5")
-ax.set_xlabel(selected_column2)
-ax.set_ylabel(selected_column1)
-# ax.set_title('Graph of Y-axis vs X-axis')
-# Set x-ticks every 5 samples
-plt.xticks(np.arange(0, len(df), 5), rotation=90)
-# Add background of horizontal grid
-ax.grid(axis='y', linestyle='--', alpha=0.5)
 
-st.pyplot(fig)
 
 fig1 = px.line(df, selected_column2, y=selected_column1, markers=True,)
 # Set the line color
-fig1.update_traces(line_color='#d9295a', line_width=4)
+fig1.update_traces(line_color='#d9295a', line_width=3)
 # Set the marker color
 fig1.update_traces(marker_color='#d29fb8')
 fig1.update_layout(xaxis_title='Game Number', yaxis_title=selected_column1)
