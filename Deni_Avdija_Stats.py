@@ -116,15 +116,11 @@ df = df.iloc[::-1]
 # Present the df
 st.dataframe(df)
 
-# User choose X-axis parameter
-columns2 = df.columns
-selected_column2 = 'DATE'
-
 # User choose column to present in graph
 columns1 = df.columns
 selected_column1 = st.selectbox("Select Y-axis parameter", columns1, key="5", index=columns2.get_loc('PTS'))
 
-"""
+
 fig, ax = plt.subplots()
 ax.plot(df[selected_column2], df[selected_column1],color="#E41134")
 ax.scatter(df[selected_column2], df[selected_column1],color = "#C6CFD5")
@@ -136,11 +132,10 @@ plt.xticks(np.arange(0, len(df), 5), rotation=90)
 # Add background of horizontal grid
 ax.grid(axis='y', linestyle='--', alpha=0.5)
 
-st.pyplot(fig)
-"""
+# st.pyplot(fig)
 
-fig1 = px.scatter(df, x=selected_column2, y=selected_column1)
-fig1.update_layout(xaxis_title=selected_column2, yaxis_title=selected_column1)
+fig1 = px.scatter(df, x='DATE', y=selected_column1)
+fig1.update_layout(xaxis_title='Date', yaxis_title=selected_column1)
 fig1.update_layout(xaxis=dict(tickmode='linear', tick0=0, dtick=5))
 fig1.update_layout(yaxis=dict(gridcolor='#C6CFD5', gridwidth=1))
 st.plotly_chart(fig1)
