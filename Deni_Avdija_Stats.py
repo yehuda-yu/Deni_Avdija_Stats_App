@@ -134,9 +134,9 @@ ax.grid(axis='y', linestyle='--', alpha=0.5)
 
 st.pyplot(fig)
 
-fig1 = px.scatter(df, x='DATE', y=selected_column1)
+fig1 = px.scatter(df, x=selected_column2, y=selected_column1)
 fig1.update_layout(xaxis_title='Date', yaxis_title=selected_column1)
-fig1.update_layout(xaxis=dict(tickmode='linear', tick0=0, dtick=5))
+# fig1.update_layout(xaxis=dict(tickmode='linear', tick0=0, dtick=5))
 fig1.update_layout(yaxis=dict(gridcolor='#C6CFD5', gridwidth=1))
 st.plotly_chart(fig1)
 
