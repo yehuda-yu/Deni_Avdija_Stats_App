@@ -123,7 +123,18 @@ selected_column1 = st.selectbox("Select Y-axis parameter", columns1, key="5", in
 df['Game Number'] = df.index+1
 selected_column2 = 'Game Number'
 
-
+fig1 = px.line(df, selected_column2, y=selected_column1, markers=True,)
+# Set the line color and width
+fig1.update_traces(line_color='#d9295a', line_width=3)
+# Set the marker color
+fig1.update_traces(marker_color='#3f2646')
+fig1.update_layout(xaxis_title='Game Number', yaxis_title=selected_column1)
+# Set the x-axis tick mode, starting position, and step size
+fig1.update_layout(xaxis=dict(tickmode='linear', tick0=0, dtick=5, nticks=10))
+# Set the y-axis tick mode and number of ticks
+fig1.update_layout(yaxis=dict(tickmode='linear', nticks=10))
+st.plotly_chart(fig1)
+'''
 fig1 = px.line(df, selected_column2, y=selected_column1, markers=True,)
 # Set the line color
 fig1.update_traces(line_color='#d9295a', line_width=3)
@@ -133,7 +144,7 @@ fig1.update_layout(xaxis_title='Game Number', yaxis_title=selected_column1)
 fig1.update_layout(xaxis=dict(tickmode='linear', tick0=0, dtick=5))
 fig1.update_layout(yaxis=dict(gridcolor='#C6CFD5', gridwidth=1))
 st.plotly_chart(fig1)
-
+'''
 # Rolling average
 #rolling = st.slider("Rolling avg value", 1, 10, 1)
 #chart = st.line_chart(df[selected_column1].rolling(rolling).mean())
