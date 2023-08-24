@@ -132,7 +132,7 @@ plt.xticks(np.arange(0, len(df), 5), rotation=90)
 # Add background of horizontal grid
 ax.grid(axis='y', linestyle='--', alpha=0.5)
 
-# st.pyplot(fig)
+st.pyplot(fig)
 
 fig1 = px.scatter(df, x='DATE', y=selected_column1)
 fig1.update_layout(xaxis_title='Date', yaxis_title=selected_column1)
