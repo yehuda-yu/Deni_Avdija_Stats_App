@@ -148,17 +148,7 @@ columns = df_k.columns
 selected_column_y = st.selectbox("Select Y-axis parameter", columns, index=columns.get_loc('PTS'))
 
 
-col1, col2 = st.columns([3, 1])
-
-fig, ax = plt.subplots()
-ax.plot(df_k['DATE'], df_k[selected_column_y],color = '#E41134')
-ax.scatter(df_k['DATE'], df_k[selected_column_y],color = "#C6CFD5")
-ax.set_xlabel('Date')
-ax.set_title(f'{selected_column_y} (last {k} games)')
-ax.set_ylabel(selected_column_y)
-plt.xticks(rotation=90)
-# Add background of horizontal grid
-ax.grid(axis='y', linestyle='--', alpha=0.5)
+col1, col3, col2 = st.columns([3, 1])
 
 fig2 = px.line(df_k, x='DATE', y=selected_column_y, markers=True,)
 # Set the line color and width
