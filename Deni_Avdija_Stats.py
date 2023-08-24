@@ -120,7 +120,8 @@ st.dataframe(df)
 columns1 = df.columns
 selected_column1 = st.selectbox("Select Y-axis parameter", columns1, key="5", index=columns1.get_loc('PTS'))
 
-selected_column2 = 'DATE'
+df['Game Number'] = df.index+1
+selected_column2 = 'Game Number'
 fig, ax = plt.subplots()
 ax.plot(df[selected_column2], df[selected_column1],color="#E41134")
 ax.scatter(df[selected_column2], df[selected_column1],color = "#C6CFD5")
@@ -139,7 +140,7 @@ fig1 = px.line(df, selected_column2, y=selected_column1, markers=True)
 fig1.update_traces(line_color='#d9295a')
 # Set the marker color
 fig1.update_traces(marker_color='#d29fb8')
-fig1.update_layout(xaxis_title='Date', yaxis_title=selected_column1)
+fig1.update_layout(xaxis_title='Game Number', yaxis_title=selected_column1)
 #fig1.update_layout(xaxis=dict(tickmode='linear', tick0=0, dtick=5))
 #fig1.update_layout(yaxis=dict(gridcolor='#C6CFD5', gridwidth=1))
 st.plotly_chart(fig1)
