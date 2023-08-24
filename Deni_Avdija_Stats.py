@@ -157,11 +157,19 @@ ax.set_xlabel('Date')
 ax.set_title(f'{selected_column_y} (last {k} games)')
 ax.set_ylabel(selected_column_y)
 plt.xticks(rotation=90)
-
-
 # Add background of horizontal grid
 ax.grid(axis='y', linestyle='--', alpha=0.5)
-col1.pyplot(fig)
+
+fig2 = px.line(df_k, x='DATE', y=selected_column_y, markers=True,)
+# Set the line color and width
+fig2.update_traces(line_color='#d9295a', line_width=3)
+# Set the marker color
+fig2.update_traces(marker_color='#3f2646')
+# Set the x-axis tick mode, starting position, and step size
+fig2.update_layout(xaxis=dict(tickfont=dict(size=16)))
+# Set the y-axis tick mode and number of ticks
+fig2.update_layout(yaxis=dict(tickfont=dict(size=16)))
+col1.plotly_chart(fig)
 
 # Add the Stats:
 col2.subheader(f'Last {k} Games Stats')
