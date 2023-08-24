@@ -135,7 +135,7 @@ ax.grid(axis='y', linestyle='--', alpha=0.5)
 
 st.pyplot(fig)
 
-fig1 = px.line(df, selected_column2, y=selected_column1, markers=True)
+fig1 = px.line(df, selected_column2, y=selected_column1, markers=True,width=4)
 # Set the line color
 fig1.update_traces(line_color='#d9295a')
 # Set the marker color
