@@ -95,7 +95,8 @@ st.dataframe(career_df.style.format(subset=career_df.columns[4:], formatter="{:.
 columns = career_df.columns[4:].tolist()
 selected_column = st.selectbox("Select parameter", columns, key="1")
 fig = px.bar(career_df, x=career_df.index, y=selected_column, width=700)
-fig.update_traces(marker_color="#00265B")
+# fig.update_traces(marker_color="#00265B")
+fig.update_traces(marker_color="#00265B", textfont_size=12, textangle=0, textposition="outside", cliponaxis=False)
 fig.update_layout(font=dict(size=18))
 st.plotly_chart(fig)
 
