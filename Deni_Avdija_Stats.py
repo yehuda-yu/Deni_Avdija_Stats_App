@@ -118,7 +118,8 @@ st.dataframe(df)
 
 # User choose X-axis parameter
 columns2 = df.columns
-selected_column2 = st.selectbox("Select x-axis parameter (optional)", columns2, key="4", index=columns2.get_loc('DATE'))
+# selected_column2 = st.selectbox("Select x-axis parameter (optional)", columns2, key="4", index=columns2.get_loc('DATE'))
+selected_column2 = 'DATE'
 
 # User choose column to present in graph
 columns1 = df.columns
