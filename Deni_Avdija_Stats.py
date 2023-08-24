@@ -135,17 +135,6 @@ fig1.update_layout(xaxis=dict(tickmode='linear', tick0=0, dtick=5, tickfont=dict
 fig1.update_layout(yaxis=dict(tickfont=dict(size=16)))
 st.plotly_chart(fig1)
 
-'''
-fig1 = px.line(df, selected_column2, y=selected_column1, markers=True,)
-# Set the line color
-fig1.update_traces(line_color='#d9295a', line_width=3)
-# Set the marker color
-fig1.update_traces(marker_color='#3f2646')
-fig1.update_layout(xaxis_title='Game Number', yaxis_title=selected_column1)
-fig1.update_layout(xaxis=dict(tickmode='linear', tick0=0, dtick=5))
-fig1.update_layout(yaxis=dict(gridcolor='#C6CFD5', gridwidth=1))
-st.plotly_chart(fig1)
-'''
 # Rolling average
 #rolling = st.slider("Rolling avg value", 1, 10, 1)
 #chart = st.line_chart(df[selected_column1].rolling(rolling).mean())
@@ -168,6 +157,7 @@ ax.set_xlabel('Date')
 ax.set_title(f'{selected_column_y} (last {k} games)')
 ax.set_ylabel(selected_column_y)
 plt.xticks(rotation=90)
+
 
 # Add background of horizontal grid
 ax.grid(axis='y', linestyle='--', alpha=0.5)
