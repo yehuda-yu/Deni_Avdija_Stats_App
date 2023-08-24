@@ -148,7 +148,7 @@ columns = df_k.columns
 selected_column_y = st.selectbox("Select Y-axis parameter", columns, index=columns.get_loc('PTS'))
 
 
-col1, col3, col2 = st.columns([3, 1])
+col1, col2 = st.columns([3, 1])
 
 fig2 = px.line(df_k, x='DATE', y=selected_column_y, markers=True,)
 # Set the line color and width
