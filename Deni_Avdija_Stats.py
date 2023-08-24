@@ -148,8 +148,6 @@ columns = df_k.columns
 selected_column_y = st.selectbox("Select Y-axis parameter", columns, index=columns.get_loc('PTS'))
 
 
-col1, col2 = st.columns([3, 1])
-
 fig2 = px.line(df_k, x='DATE', y=selected_column_y, markers=True,)
 # Set the line color and width
 fig2.update_traces(line_color='#d9295a', line_width=3)
@@ -159,10 +157,10 @@ fig2.update_traces(marker_color='#3f2646')
 fig2.update_layout(xaxis=dict(tickfont=dict(size=16)))
 # Set the y-axis tick mode and number of ticks
 fig2.update_layout(yaxis=dict(tickfont=dict(size=16)))
-col1.plotly_chart(fig2)
+st.plotly_chart(fig2)
 
 # Add the Stats:
-col2.subheader(f'Last {k} Games Stats')
+st.subheader(f'Last {k} Games Stats')
 idx = [1, 2, 3, -1]
 df_table = df_k.describe().iloc[idx]
 # select the column you want to move
@@ -180,7 +178,7 @@ df_table = pd.concat([selected_column, df_table], axis=1)
 
 # assign the column names in the desired order
 df_table = df_table[cols]
-col2.dataframe(df_table)
+st.dataframe(df_table)
 
 
 
